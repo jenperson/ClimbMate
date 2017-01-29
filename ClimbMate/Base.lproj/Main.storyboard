@@ -1,14 +1,19 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1212" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="zYl-WO-ypA">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Climb Log Table View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ClimbLogTableViewController" customModule="ClimbMate" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -16,11 +21,141 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Oa2-c8-yJi">
+                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                                <subviews>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="oqp-GO-9Tt">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <prototypes>
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="climbCell" id="a9T-GS-dQy" customClass="ClimbLogTableViewCell" customModule="ClimbMate" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="a9T-GS-dQy" id="PBp-Gb-60j">
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ClimbValue" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B0o-qP-YDG">
+                                                            <rect key="frame" x="312" y="11" width="55" height="21"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="55" id="UAx-2I-2yu"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstAttribute="trailingMargin" secondItem="B0o-qP-YDG" secondAttribute="trailing" id="YiE-af-lyw"/>
+                                                        <constraint firstItem="B0o-qP-YDG" firstAttribute="centerY" secondItem="PBp-Gb-60j" secondAttribute="centerY" id="j7c-YA-c78"/>
+                                                    </constraints>
+                                                </tableViewCellContentView>
+                                                <connections>
+                                                    <outlet property="climbValueLabel" destination="B0o-qP-YDG" id="cBJ-sx-DO9"/>
+                                                </connections>
+                                            </tableViewCell>
+                                        </prototypes>
+                                        <connections>
+                                            <outlet property="dataSource" destination="BYZ-38-t0r" id="JRP-1B-chO"/>
+                                            <outlet property="delegate" destination="BYZ-38-t0r" id="5Qu-mK-CxU"/>
+                                        </connections>
+                                    </tableView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Oa2-c8-yJi" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="KJI-3a-OXP"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Oa2-c8-yJi" secondAttribute="bottom" id="SHR-8H-hYo"/>
+                            <constraint firstAttribute="trailing" secondItem="Oa2-c8-yJi" secondAttribute="trailing" id="SeM-S0-uNA"/>
+                            <constraint firstItem="Oa2-c8-yJi" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="eVD-25-M7R"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="z01-gy-PKf"/>
+                    <connections>
+                        <outlet property="climbLogTableView" destination="oqp-GO-9Tt" id="Up5-lh-rOI"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1783.2" y="67.916041979010501"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="OKX-pb-aoH">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Vbw-RY-kPy" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="fX7-Vf-B6n"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="bmO-Qr-uxj">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="uiC-ig-obX"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="S7d-Gg-kPr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="919" y="68"/>
+        </scene>
+        <!--Item 2-->
+        <scene sceneID="vQR-D7-yYK">
+            <objects>
+                <viewController id="rGd-lB-bYJ" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="6XX-HY-3JC"/>
+                        <viewControllerLayoutGuide type="bottom" id="3qp-U9-oKe"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="wk0-qH-n46">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item 2" id="lJJ-Qu-vQH"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="67X-FI-dYH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1623" y="-638"/>
+        </scene>
+        <!--Item 1-->
+        <scene sceneID="C5S-r8-QJ3">
+            <objects>
+                <viewController id="1cF-LE-3C3" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="dCX-ns-P9a"/>
+                        <viewControllerLayoutGuide type="bottom" id="cUw-PL-b4h"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Vsq-fx-iR2">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item 1" id="5I5-OG-WW9"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Hri-Ok-nJe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="895" y="-1265"/>
+        </scene>
+        <!--View Picker Controller-->
+        <scene sceneID="7ee-Rr-2Pm">
+            <objects>
+                <tabBarController id="zYl-WO-ypA" customClass="ViewPickerController" customModule="ClimbMate" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="Hal-HL-PC5">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="1cF-LE-3C3" kind="relationship" relationship="viewControllers" id="bo5-cy-mZk"/>
+                        <segue destination="rGd-lB-bYJ" kind="relationship" relationship="viewControllers" id="G1H-yr-M5Z"/>
+                        <segue destination="Vbw-RY-kPy" kind="relationship" relationship="viewControllers" id="FSc-2k-a27"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="C8j-kG-huQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-57" y="-938"/>
         </scene>
     </scenes>
 </document>

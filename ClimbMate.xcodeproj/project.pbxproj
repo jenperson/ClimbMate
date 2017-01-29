@@ -8,13 +8,19 @@
 
 /* Begin PBXBuildFile section */
 		005283DB1E3E870D003ADEA3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 005283DA1E3E870D003ADEA3 /* AppDelegate.swift */; };
-		005283DD1E3E870D003ADEA3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 005283DC1E3E870D003ADEA3 /* ViewController.swift */; };
+		005283DD1E3E870D003ADEA3 /* ClimbLogTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 005283DC1E3E870D003ADEA3 /* ClimbLogTableViewController.swift */; };
 		005283E01E3E870D003ADEA3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 005283DE1E3E870D003ADEA3 /* Main.storyboard */; };
-		005283E31E3E870D003ADEA3 /* ClimbMate.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 005283E11E3E870D003ADEA3 /* ClimbMate.xcdatamodeld */; };
 		005283E51E3E870D003ADEA3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 005283E41E3E870D003ADEA3 /* Assets.xcassets */; };
 		005283E81E3E870D003ADEA3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 005283E61E3E870D003ADEA3 /* LaunchScreen.storyboard */; };
 		005283F31E3E870D003ADEA3 /* ClimbMateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 005283F21E3E870D003ADEA3 /* ClimbMateTests.swift */; };
 		005283FE1E3E870D003ADEA3 /* ClimbMateUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 005283FD1E3E870D003ADEA3 /* ClimbMateUITests.swift */; };
+		0052840C1E3E873E003ADEA3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0052840B1E3E873E003ADEA3 /* GoogleService-Info.plist */; };
+		00B716E81E3E9107000848A8 /* ViewPickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00B716E71E3E9107000848A8 /* ViewPickerController.swift */; };
+		00B716EB1E3E93DA000848A8 /* ClimbLogTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00B716EA1E3E93DA000848A8 /* ClimbLogTableViewCell.swift */; };
+		00B716EE1E3E95CB000848A8 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00B716ED1E3E95CB000848A8 /* Constants.swift */; };
+		06026BF342137E5C471E1947 /* Pods_ClimbMate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EE8D8795987EEBACE00C4B2 /* Pods_ClimbMate.framework */; };
+		7753A57C3F4D5FB906259F9E /* Pods_ClimbMateUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C061CEDEF0E05BCBB8A212B /* Pods_ClimbMateUITests.framework */; };
+		865628910DFC9EC25812C854 /* Pods_ClimbMateTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9C66FF0E07B27D2CABE3245 /* Pods_ClimbMateTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,9 +43,8 @@
 /* Begin PBXFileReference section */
 		005283D71E3E870D003ADEA3 /* ClimbMate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ClimbMate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		005283DA1E3E870D003ADEA3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		005283DC1E3E870D003ADEA3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		005283DC1E3E870D003ADEA3 /* ClimbLogTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClimbLogTableViewController.swift; sourceTree = "<group>"; };
 		005283DF1E3E870D003ADEA3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		005283E21E3E870D003ADEA3 /* ClimbMate.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ClimbMate.xcdatamodel; sourceTree = "<group>"; };
 		005283E41E3E870D003ADEA3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		005283E71E3E870D003ADEA3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		005283E91E3E870D003ADEA3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -49,6 +54,19 @@
 		005283F91E3E870D003ADEA3 /* ClimbMateUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ClimbMateUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		005283FD1E3E870D003ADEA3 /* ClimbMateUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClimbMateUITests.swift; sourceTree = "<group>"; };
 		005283FF1E3E870D003ADEA3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0052840B1E3E873E003ADEA3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		00B716E71E3E9107000848A8 /* ViewPickerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewPickerController.swift; sourceTree = "<group>"; };
+		00B716EA1E3E93DA000848A8 /* ClimbLogTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClimbLogTableViewCell.swift; sourceTree = "<group>"; };
+		00B716ED1E3E95CB000848A8 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		15AEF2244B3B1E1DE648EF56 /* Pods-ClimbMate.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ClimbMate.release.xcconfig"; path = "Pods/Target Support Files/Pods-ClimbMate/Pods-ClimbMate.release.xcconfig"; sourceTree = "<group>"; };
+		1C061CEDEF0E05BCBB8A212B /* Pods_ClimbMateUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ClimbMateUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6D55C61B31406587A8614C51 /* Pods-ClimbMateUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ClimbMateUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ClimbMateUITests/Pods-ClimbMateUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		6E6CAE59950F48E3D168168F /* Pods-ClimbMate.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ClimbMate.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ClimbMate/Pods-ClimbMate.debug.xcconfig"; sourceTree = "<group>"; };
+		6EE8D8795987EEBACE00C4B2 /* Pods_ClimbMate.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ClimbMate.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		880077FAFF80C51681659188 /* Pods-ClimbMateUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ClimbMateUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ClimbMateUITests/Pods-ClimbMateUITests.release.xcconfig"; sourceTree = "<group>"; };
+		B9C66FF0E07B27D2CABE3245 /* Pods_ClimbMateTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ClimbMateTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F14634D65654547813F9B605 /* Pods-ClimbMateTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ClimbMateTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ClimbMateTests/Pods-ClimbMateTests.debug.xcconfig"; sourceTree = "<group>"; };
+		F68847B86305ED7305F396DB /* Pods-ClimbMateTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ClimbMateTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ClimbMateTests/Pods-ClimbMateTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +74,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				06026BF342137E5C471E1947 /* Pods_ClimbMate.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +82,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				865628910DFC9EC25812C854 /* Pods_ClimbMateTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,6 +90,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7753A57C3F4D5FB906259F9E /* Pods_ClimbMateUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,6 +104,8 @@
 				005283F11E3E870D003ADEA3 /* ClimbMateTests */,
 				005283FC1E3E870D003ADEA3 /* ClimbMateUITests */,
 				005283D81E3E870D003ADEA3 /* Products */,
+				DD2A6EC279409616E6941F18 /* Pods */,
+				D1BC8842EA218362B33F2ECF /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -100,12 +123,14 @@
 			isa = PBXGroup;
 			children = (
 				005283DA1E3E870D003ADEA3 /* AppDelegate.swift */,
-				005283DC1E3E870D003ADEA3 /* ViewController.swift */,
+				00B716E91E3E910E000848A8 /* ViewControllers */,
 				005283DE1E3E870D003ADEA3 /* Main.storyboard */,
+				00B716EC1E3E93E3000848A8 /* CustomCells */,
 				005283E41E3E870D003ADEA3 /* Assets.xcassets */,
+				00B716ED1E3E95CB000848A8 /* Constants.swift */,
 				005283E61E3E870D003ADEA3 /* LaunchScreen.storyboard */,
 				005283E91E3E870D003ADEA3 /* Info.plist */,
-				005283E11E3E870D003ADEA3 /* ClimbMate.xcdatamodeld */,
+				0052840B1E3E873E003ADEA3 /* GoogleService-Info.plist */,
 			);
 			path = ClimbMate;
 			sourceTree = "<group>";
@@ -128,6 +153,46 @@
 			path = ClimbMateUITests;
 			sourceTree = "<group>";
 		};
+		00B716E91E3E910E000848A8 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				005283DC1E3E870D003ADEA3 /* ClimbLogTableViewController.swift */,
+				00B716E71E3E9107000848A8 /* ViewPickerController.swift */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		00B716EC1E3E93E3000848A8 /* CustomCells */ = {
+			isa = PBXGroup;
+			children = (
+				00B716EA1E3E93DA000848A8 /* ClimbLogTableViewCell.swift */,
+			);
+			name = CustomCells;
+			sourceTree = "<group>";
+		};
+		D1BC8842EA218362B33F2ECF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6EE8D8795987EEBACE00C4B2 /* Pods_ClimbMate.framework */,
+				B9C66FF0E07B27D2CABE3245 /* Pods_ClimbMateTests.framework */,
+				1C061CEDEF0E05BCBB8A212B /* Pods_ClimbMateUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DD2A6EC279409616E6941F18 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				6E6CAE59950F48E3D168168F /* Pods-ClimbMate.debug.xcconfig */,
+				15AEF2244B3B1E1DE648EF56 /* Pods-ClimbMate.release.xcconfig */,
+				F14634D65654547813F9B605 /* Pods-ClimbMateTests.debug.xcconfig */,
+				F68847B86305ED7305F396DB /* Pods-ClimbMateTests.release.xcconfig */,
+				6D55C61B31406587A8614C51 /* Pods-ClimbMateUITests.debug.xcconfig */,
+				880077FAFF80C51681659188 /* Pods-ClimbMateUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -135,9 +200,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 005284021E3E870D003ADEA3 /* Build configuration list for PBXNativeTarget "ClimbMate" */;
 			buildPhases = (
+				8C1DF50CF8387133EE33B968 /* [CP] Check Pods Manifest.lock */,
 				005283D31E3E870C003ADEA3 /* Sources */,
 				005283D41E3E870C003ADEA3 /* Frameworks */,
 				005283D51E3E870C003ADEA3 /* Resources */,
+				DF3C9A6A821EB80277350DA6 /* [CP] Embed Pods Frameworks */,
+				2099B9CDE4B6A84189222E13 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -152,9 +220,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 005284051E3E870D003ADEA3 /* Build configuration list for PBXNativeTarget "ClimbMateTests" */;
 			buildPhases = (
+				CEF2EBE3D205E0CE312E5A7D /* [CP] Check Pods Manifest.lock */,
 				005283EA1E3E870D003ADEA3 /* Sources */,
 				005283EB1E3E870D003ADEA3 /* Frameworks */,
 				005283EC1E3E870D003ADEA3 /* Resources */,
+				8A7436A468EBB4FEF42D3751 /* [CP] Embed Pods Frameworks */,
+				CAF20F36CDA19BAF2E6DA2F0 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -170,9 +241,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 005284081E3E870D003ADEA3 /* Build configuration list for PBXNativeTarget "ClimbMateUITests" */;
 			buildPhases = (
+				C42D46944F17188339F78699 /* [CP] Check Pods Manifest.lock */,
 				005283F51E3E870D003ADEA3 /* Sources */,
 				005283F61E3E870D003ADEA3 /* Frameworks */,
 				005283F71E3E870D003ADEA3 /* Resources */,
+				83BAB6AA7798830FE946FA3D /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -236,6 +309,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				005283E81E3E870D003ADEA3 /* LaunchScreen.storyboard in Resources */,
+				0052840C1E3E873E003ADEA3 /* GoogleService-Info.plist in Resources */,
 				005283E51E3E870D003ADEA3 /* Assets.xcassets in Resources */,
 				005283E01E3E870D003ADEA3 /* Main.storyboard in Resources */,
 			);
@@ -257,14 +331,139 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		2099B9CDE4B6A84189222E13 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ClimbMate/Pods-ClimbMate-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		83BAB6AA7798830FE946FA3D /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ClimbMateUITests/Pods-ClimbMateUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8A7436A468EBB4FEF42D3751 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ClimbMateTests/Pods-ClimbMateTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8C1DF50CF8387133EE33B968 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		C42D46944F17188339F78699 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		CAF20F36CDA19BAF2E6DA2F0 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ClimbMateTests/Pods-ClimbMateTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CEF2EBE3D205E0CE312E5A7D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		DF3C9A6A821EB80277350DA6 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ClimbMate/Pods-ClimbMate-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		005283D31E3E870C003ADEA3 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				005283E31E3E870D003ADEA3 /* ClimbMate.xcdatamodeld in Sources */,
-				005283DD1E3E870D003ADEA3 /* ViewController.swift in Sources */,
+				00B716EB1E3E93DA000848A8 /* ClimbLogTableViewCell.swift in Sources */,
+				005283DD1E3E870D003ADEA3 /* ClimbLogTableViewController.swift in Sources */,
+				00B716E81E3E9107000848A8 /* ViewPickerController.swift in Sources */,
 				005283DB1E3E870D003ADEA3 /* AppDelegate.swift in Sources */,
+				00B716EE1E3E95CB000848A8 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -414,11 +613,12 @@
 		};
 		005284031E3E870D003ADEA3 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6E6CAE59950F48E3D168168F /* Pods-ClimbMate.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = ClimbMate/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = jperson.ClimbMate;
+				PRODUCT_BUNDLE_IDENTIFIER = com.climbmate;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -426,11 +626,12 @@
 		};
 		005284041E3E870D003ADEA3 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 15AEF2244B3B1E1DE648EF56 /* Pods-ClimbMate.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = ClimbMate/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = jperson.ClimbMate;
+				PRODUCT_BUNDLE_IDENTIFIER = com.climbmate;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -438,6 +639,7 @@
 		};
 		005284061E3E870D003ADEA3 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F14634D65654547813F9B605 /* Pods-ClimbMateTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -452,6 +654,7 @@
 		};
 		005284071E3E870D003ADEA3 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F68847B86305ED7305F396DB /* Pods-ClimbMateTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -466,6 +669,7 @@
 		};
 		005284091E3E870D003ADEA3 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6D55C61B31406587A8614C51 /* Pods-ClimbMateUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				INFOPLIST_FILE = ClimbMateUITests/Info.plist;
@@ -479,6 +683,7 @@
 		};
 		0052840A1E3E870D003ADEA3 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 880077FAFF80C51681659188 /* Pods-ClimbMateUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				INFOPLIST_FILE = ClimbMateUITests/Info.plist;
@@ -509,6 +714,7 @@
 				005284041E3E870D003ADEA3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		005284051E3E870D003ADEA3 /* Build configuration list for PBXNativeTarget "ClimbMateTests" */ = {
 			isa = XCConfigurationList;
@@ -517,6 +723,7 @@
 				005284071E3E870D003ADEA3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		005284081E3E870D003ADEA3 /* Build configuration list for PBXNativeTarget "ClimbMateUITests" */ = {
 			isa = XCConfigurationList;
@@ -525,21 +732,9 @@
 				0052840A1E3E870D003ADEA3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		005283E11E3E870D003ADEA3 /* ClimbMate.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				005283E21E3E870D003ADEA3 /* ClimbMate.xcdatamodel */,
-			);
-			currentVersion = 005283E21E3E870D003ADEA3 /* ClimbMate.xcdatamodel */;
-			path = ClimbMate.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = 005283CF1E3E870C003ADEA3 /* Project object */;
 }
