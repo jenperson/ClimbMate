@@ -81,13 +81,13 @@
             </objects>
             <point key="canvasLocation" x="1783.2" y="67.916041979010501"/>
         </scene>
-        <!--Item-->
+        <!--My Climbs-->
         <scene sceneID="OKX-pb-aoH">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Vbw-RY-kPy" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="fX7-Vf-B6n"/>
+                <navigationController title="My Climbs" automaticallyAdjustsScrollViewInsets="NO" id="Vbw-RY-kPy" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="My Climbs" id="fX7-Vf-B6n"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="bmO-Qr-uxj">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="bmO-Qr-uxj">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -117,12 +117,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="67X-FI-dYH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1623" y="-638"/>
+            <point key="canvasLocation" x="2560.8000000000002" y="-638.2308845577212"/>
         </scene>
-        <!--Item 1-->
+        <!--Add Climb View Controller-->
         <scene sceneID="C5S-r8-QJ3">
             <objects>
-                <viewController id="1cF-LE-3C3" sceneMemberID="viewController">
+                <viewController id="1cF-LE-3C3" customClass="AddClimbViewController" customModule="ClimbMate" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="dCX-ns-P9a"/>
                         <viewControllerLayoutGuide type="bottom" id="cUw-PL-b4h"/>
@@ -130,13 +130,140 @@
                     <view key="view" contentMode="scaleToFill" id="Vsq-fx-iR2">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="7Lt-pX-ML6">
+                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                                <subviews>
+                                    <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="xdU-IX-FX5">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="d9j-mr-GYr"/>
+                                        </constraints>
+                                        <date key="date" timeIntervalSinceReferenceDate="507523343.40634501">
+                                            <!--2017-01-31 02:42:23 +0000-->
+                                        </date>
+                                    </datePicker>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="F7T-Fj-GYn">
+                                        <rect key="frame" x="0.0" y="50" width="375" height="20.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="248" verticalCompressionResistancePriority="755" text="Climb Location:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vja-E1-uRe">
+                                                <rect key="frame" x="0.0" y="0.0" width="118.5" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VeF-fG-MCB">
+                                                <rect key="frame" x="118.5" y="0.0" width="256.5" height="20.5"/>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                        </subviews>
+                                    </stackView>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="lcj-mg-MUX">
+                                        <rect key="frame" x="0.0" y="70.5" width="375" height="128"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="128" id="DAV-s8-X4o"/>
+                                        </constraints>
+                                        <prototypes>
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="iGC-f8-i3G">
+                                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="iGC-f8-i3G" id="dVn-Fe-E7Z">
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                </tableViewCellContentView>
+                                            </tableViewCell>
+                                        </prototypes>
+                                    </tableView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="x0i-BJ-jsR">
+                                        <rect key="frame" x="0.0" y="198.5" width="375" height="30"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="248" text="Climb Name:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ceU-df-h4g">
+                                                <rect key="frame" x="0.0" y="0.0" width="98" height="30"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NSQ-Ww-qnI">
+                                                <rect key="frame" x="98" y="0.0" width="277" height="30"/>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="Qdi-Jt-NGG"/>
+                                        </constraints>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="omW-Di-w5P">
+                                        <rect key="frame" x="0.0" y="228.5" width="375" height="40"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="752" text="Climb Level:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WQg-dW-kQf">
+                                                <rect key="frame" x="0.0" y="0.0" width="93" height="40"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <pickerView contentMode="scaleToFill" horizontalHuggingPriority="247" horizontalCompressionResistancePriority="748" translatesAutoresizingMaskIntoConstraints="NO" id="VAf-xO-mhV">
+                                                <rect key="frame" x="93" y="0.0" width="121" height="40"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="40" id="Xci-Mt-92D"/>
+                                                </constraints>
+                                            </pickerView>
+                                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="bNi-bJ-mVf">
+                                                <rect key="frame" x="214" y="0.0" width="161" height="41"/>
+                                                <segments>
+                                                    <segment title="Sport"/>
+                                                    <segment title="Bouldering"/>
+                                                </segments>
+                                                <connections>
+                                                    <action selector="toggleSportOrBoulder:" destination="1cF-LE-3C3" eventType="valueChanged" id="EOX-l5-fO7"/>
+                                                </connections>
+                                            </segmentedControl>
+                                        </subviews>
+                                    </stackView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H9k-F6-c4V">
+                                        <rect key="frame" x="0.0" y="268.5" width="375" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="rUz-pB-GiP"/>
+                                        </constraints>
+                                        <state key="normal" title="Add Climb"/>
+                                        <connections>
+                                            <action selector="addClimb:" destination="1cF-LE-3C3" eventType="touchUpInside" id="Up4-gu-8nZ"/>
+                                        </connections>
+                                    </button>
+                                    <view contentMode="scaleToFill" horizontalHuggingPriority="247" verticalHuggingPriority="248" translatesAutoresizingMaskIntoConstraints="NO" id="ksB-Qj-rpT">
+                                        <rect key="frame" x="0.0" y="298.5" width="375" height="255.5"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </view>
+                                </subviews>
+                            </stackView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="cUw-PL-b4h" firstAttribute="top" secondItem="7Lt-pX-ML6" secondAttribute="bottom" id="V0P-PU-4VW"/>
+                            <constraint firstItem="7Lt-pX-ML6" firstAttribute="top" secondItem="dCX-ns-P9a" secondAttribute="bottom" id="cHH-tX-bxc"/>
+                            <constraint firstAttribute="trailing" secondItem="7Lt-pX-ML6" secondAttribute="trailing" id="iCP-PZ-eeV"/>
+                            <constraint firstItem="cUw-PL-b4h" firstAttribute="top" secondItem="ksB-Qj-rpT" secondAttribute="bottom" id="iTh-rL-W0s"/>
+                            <constraint firstItem="7Lt-pX-ML6" firstAttribute="leading" secondItem="Vsq-fx-iR2" secondAttribute="leading" id="v0D-cc-5Mo"/>
+                        </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 1" id="5I5-OG-WW9"/>
+                    <navigationItem key="navigationItem" id="OiA-AL-25R"/>
+                    <connections>
+                        <outlet property="addClimbButton" destination="H9k-F6-c4V" id="Dk3-Ji-CMo"/>
+                        <outlet property="climbLevelPickerView" destination="VAf-xO-mhV" id="cRD-Nr-li1"/>
+                        <outlet property="climbListTableView" destination="lcj-mg-MUX" id="CUQ-ND-dHW"/>
+                        <outlet property="climbLocationTextField" destination="VeF-fG-MCB" id="WTS-Bg-1sd"/>
+                        <outlet property="climbNameTextField" destination="NSQ-Ww-qnI" id="LXE-Fh-sng"/>
+                        <outlet property="sportOrBoulderSegmentedControl" destination="bNi-bJ-mVf" id="z04-6T-lXV"/>
+                        <outlet property="todaysDatePicker" destination="xdU-IX-FX5" id="n02-aW-gAX"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hri-Ok-nJe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="895" y="-1265"/>
+            <point key="canvasLocation" x="1728.8" y="-1265.217391304348"/>
         </scene>
         <!--View Picker Controller-->
         <scene sceneID="7ee-Rr-2Pm">
@@ -148,7 +275,7 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="1cF-LE-3C3" kind="relationship" relationship="viewControllers" id="bo5-cy-mZk"/>
+                        <segue destination="hST-Cb-s2A" kind="relationship" relationship="viewControllers" id="bo5-cy-mZk"/>
                         <segue destination="rGd-lB-bYJ" kind="relationship" relationship="viewControllers" id="G1H-yr-M5Z"/>
                         <segue destination="Vbw-RY-kPy" kind="relationship" relationship="viewControllers" id="FSc-2k-a27"/>
                     </connections>
@@ -156,6 +283,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="C8j-kG-huQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-57" y="-938"/>
+        </scene>
+        <!--Go Climbing-->
+        <scene sceneID="w46-lH-kXi">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="hST-Cb-s2A" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Go Climbing" id="5I5-OG-WW9"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="xfe-4t-lxd">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="1cF-LE-3C3" kind="relationship" relationship="rootViewController" id="hR3-Rj-yg2"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NTB-vu-1ap" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="893.60000000000002" y="-1265.217391304348"/>
         </scene>
     </scenes>
 </document>

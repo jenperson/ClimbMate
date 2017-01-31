@@ -13,4 +13,6 @@ class Constants {
     // constants for the climb log cell
     static let climbValue = "climb_value"
     static let climbDate = "climb_date"
+    static let climbName = "climb_name"
+    static let climbLocation = "climb_location"
 }

@@ -102,10 +102,8 @@ extension ClimbLogTableViewController: UITableViewDataSource, UITableViewDelegat
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         print("is this even being called?")
         if editingStyle == .delete {
-            print(climbs[indexPath.item].key)
             index = indexPath.item
-            firebaseRef.child("userName").child(climbs[indexPath.item].key).setValue(nil)            //climbs.remove(at: indexPath.item)
-            
+            firebaseRef.child("userName").child(climbs[indexPath.item].key).setValue(nil)
         }
     }
     
