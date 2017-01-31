@@ -25,8 +25,8 @@ class ClimbLogTableViewCell: UITableViewCell {
     }
     
     func populateCellWithClimb(snapshot: FIRDataSnapshot, indexPath: IndexPath) {
-        let climbValue = snapshot.value(forKey: Constants.climbValue) ?? "0.00"
-        let climbDate = snapshot.value(forKey: Constants.climbDate) ?? "1/1/00"
+        let climbValue = snapshot.childSnapshot(forPath: Constants.climbValue).value as? String ?? "0.00"
+        let climbDate = snapshot.childSnapshot(forPath: Constants.climbDate).value as? String ?? "1/1/00"
         
         self.textLabel?.text = climbDate as? String
         climbValueLabel.text = climbValue as? String

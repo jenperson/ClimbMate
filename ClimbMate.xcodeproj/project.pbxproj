@@ -18,6 +18,7 @@
 		00B716E81E3E9107000848A8 /* ViewPickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00B716E71E3E9107000848A8 /* ViewPickerController.swift */; };
 		00B716EB1E3E93DA000848A8 /* ClimbLogTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00B716EA1E3E93DA000848A8 /* ClimbLogTableViewCell.swift */; };
 		00B716EE1E3E95CB000848A8 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00B716ED1E3E95CB000848A8 /* Constants.swift */; };
+		00B716F01E3EEACB000848A8 /* ClimbLogTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00B716EF1E3EEACB000848A8 /* ClimbLogTableViewDataSource.swift */; };
 		06026BF342137E5C471E1947 /* Pods_ClimbMate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EE8D8795987EEBACE00C4B2 /* Pods_ClimbMate.framework */; };
 		7753A57C3F4D5FB906259F9E /* Pods_ClimbMateUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C061CEDEF0E05BCBB8A212B /* Pods_ClimbMateUITests.framework */; };
 		865628910DFC9EC25812C854 /* Pods_ClimbMateTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9C66FF0E07B27D2CABE3245 /* Pods_ClimbMateTests.framework */; };
@@ -58,6 +59,7 @@
 		00B716E71E3E9107000848A8 /* ViewPickerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewPickerController.swift; sourceTree = "<group>"; };
 		00B716EA1E3E93DA000848A8 /* ClimbLogTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClimbLogTableViewCell.swift; sourceTree = "<group>"; };
 		00B716ED1E3E95CB000848A8 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		00B716EF1E3EEACB000848A8 /* ClimbLogTableViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClimbLogTableViewDataSource.swift; sourceTree = "<group>"; };
 		15AEF2244B3B1E1DE648EF56 /* Pods-ClimbMate.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ClimbMate.release.xcconfig"; path = "Pods/Target Support Files/Pods-ClimbMate/Pods-ClimbMate.release.xcconfig"; sourceTree = "<group>"; };
 		1C061CEDEF0E05BCBB8A212B /* Pods_ClimbMateUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ClimbMateUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6D55C61B31406587A8614C51 /* Pods-ClimbMateUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ClimbMateUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ClimbMateUITests/Pods-ClimbMateUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -125,6 +127,7 @@
 				005283DA1E3E870D003ADEA3 /* AppDelegate.swift */,
 				00B716E91E3E910E000848A8 /* ViewControllers */,
 				005283DE1E3E870D003ADEA3 /* Main.storyboard */,
+				00B716EF1E3EEACB000848A8 /* ClimbLogTableViewDataSource.swift */,
 				00B716EC1E3E93E3000848A8 /* CustomCells */,
 				005283E41E3E870D003ADEA3 /* Assets.xcassets */,
 				00B716ED1E3E95CB000848A8 /* Constants.swift */,
@@ -464,6 +467,7 @@
 				00B716E81E3E9107000848A8 /* ViewPickerController.swift in Sources */,
 				005283DB1E3E870D003ADEA3 /* AppDelegate.swift in Sources */,
 				00B716EE1E3E95CB000848A8 /* Constants.swift in Sources */,
+				00B716F01E3EEACB000848A8 /* ClimbLogTableViewDataSource.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

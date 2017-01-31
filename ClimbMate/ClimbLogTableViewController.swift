@@ -14,14 +14,24 @@ class ClimbLogTableViewController: UIViewController {
 
     let firebaseRef = FIRDatabase.database().reference()
     var dataSource: FUITableViewDataSource!
+    var numberOfClimbs = 0
+    var dataSnapshot: FIRDataSnapshot?
     
     @IBOutlet weak var climbLogTableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        climbLogTableView.dataSource = self
+        climbLogTableView.delegate = self
         // Do any additional setup after loading the view, typically from a nib.
-        configureDatabase()
+        //configureDatabase()
+        configureTitle()
         
+    }
+    
+    override func viewDidLayoutSubviews() {
+        let editButton = UIBarButtonItem(barButtonSystemItem: .edit, target: self, action: #selector(editRows(sender: )))
+        self.navigationItem.setRightBarButton(editButton, animated: true)
     }
 
     override func didReceiveMemoryWarning() {
@@ -31,6 +41,8 @@ class ClimbLogTableViewController: UIViewController {
 
     func configureDatabase() {
         self.dataSource = self.climbLogTableView.bind(to: self.firebaseRef) { tableView, indexPath, snapshot in
+            self.numberOfClimbs = Int(snapshot.childrenCount)
+            self.dataSnapshot = snapshot
             // Dequeue cell
             let cell = tableView.dequeueReusableCell(withIdentifier: "climbCell", for: indexPath) as! ClimbLogTableViewCell
             /* populate cell */
@@ -39,17 +51,69 @@ class ClimbLogTableViewController: UIViewController {
             
             return cell
         }
+
+        self.climbLogTableView.dataSource = self.dataSource
+
+    }
+    
+    func editRows(sender: AnyObject) {
+        if !isEditing {
+            isEditing = true
+            print("is editing")
+            navigationItem.rightBarButtonItem?.tintColor = UIColor.black
+            climbLogTableView.setEditing(true, animated: true)
+            
+            if climbLogTableView.indexPathForSelectedRow != nil {
+            climbLogTableView.deleteRows(at: [climbLogTableView.indexPathForSelectedRow!], with: .none)
+                }
+
+        } else {
+            isEditing = false
+            print("done editing")
+            navigationItem.rightBarButtonItem?.tintColor = UIColor.blue
+            climbLogTableView.setEditing(false, animated: false)
+        }
+    }
+    
+    func configureTitle() {
+        self.title = "My Climbs"
     }
 
 }
 
-extension ClimbLogTableViewController: UITableViewDelegate, UITableViewDataSource {
+extension ClimbLogTableViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        <#code#>
+        configureDatabase()
+        return numberOfClimbs
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        <#code#>
+        //configureDatabase()
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "climbCell", for: indexPath) as! ClimbLogTableViewCell
+        
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        print("is this even being called?")
+        if editingStyle == .delete {
+            firebaseRef.removeValue()
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCellEditingStyle {
+        print("this is called")
+        return .delete
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print("row selected")
     }
 }
+
 
