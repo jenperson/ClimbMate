@@ -8,12 +8,10 @@
 
 import UIKit
 import Firebase
-import FirebaseDatabaseUI
 
 class ClimbLogTableViewController: UIViewController {
 
     let firebaseRef = FIRDatabase.database().reference()
-    var dataSource: FUITableViewDataSource!
     var numberOfClimbs = 0
     var dataSnapshot: FIRDataSnapshot?
     var query: FIRDatabaseQuery?
@@ -48,28 +46,12 @@ class ClimbLogTableViewController: UIViewController {
     }
     
     func configureDatabase() {
-       /* self.dataSource = self.climbLogTableView.bind(to: self.firebaseRef) { tableView, indexPath, snapshot in
-            self.numberOfClimbs = Int(snapshot.childrenCount)
-            self.dataSnapshot = snapshot
-            // Dequeue cell
-            let cell = tableView.dequeueReusableCell(withIdentifier: "climbCell", for: indexPath) as! ClimbLogTableViewCell
-            /* populate cell */
 
-            cell.populateCellWithClimb(snapshot: snapshot, indexPath: indexPath)
-            
-            return cell
-        }
-
-        self.climbLogTableView.dataSource = self.dataSource //as! ClimbLogTableViewDataSource*/
         _refHandle = firebaseRef.child("userName").observe(.childAdded) { (snapshot: FIRDataSnapshot) in
             self.climbs.append(snapshot)
             self.climbLogTableView.insertRows(at: [IndexPath(row: self.climbs.count-1, section: 0)], with: .automatic)
         }
         _delRefHandle = firebaseRef.child("userName").observe(.childRemoved){ (snapshot: FIRDataSnapshot) in
-           // self.climbs.remove(at: self.climbs.index(of: snapshot)!)
-            print("current climbs: " )
-            print(self.climbs.count)
-            print(snapshot.key)
             self.climbs.remove(at: self.index)
             self.climbLogTableView.reloadData()
             
@@ -83,10 +65,6 @@ class ClimbLogTableViewController: UIViewController {
             print("is editing")
             navigationItem.rightBarButtonItem?.tintColor = UIColor.black
             climbLogTableView.setEditing(true, animated: true)
-            
-            if climbLogTableView.indexPathForSelectedRow != nil {
-            climbLogTableView.deleteRows(at: [climbLogTableView.indexPathForSelectedRow!], with: .none)
-                }
 
         } else {
             isEditing = false
@@ -110,9 +88,10 @@ extension ClimbLogTableViewController: UITableViewDataSource, UITableViewDelegat
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "climbCell", for: indexPath) as! ClimbLogTableViewCell
-        /* populate cell */
         
+        /* populate cell */
         cell.populateCellWithClimb(snapshot: climbs[indexPath.item], indexPath: indexPath)
+        
         return cell
     }
     
@@ -129,11 +108,6 @@ extension ClimbLogTableViewController: UITableViewDataSource, UITableViewDelegat
             
         }
     }
-
-    /*func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCellEditingStyle {
-        print("this is called")
-        return .delete
-    }*/
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("row selected")
