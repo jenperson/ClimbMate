@@ -16,12 +16,13 @@ class ClimbLogTableViewController: UIViewController {
     var dataSource: FUITableViewDataSource!
     var numberOfClimbs = 0
     var dataSnapshot: FIRDataSnapshot?
+    var query: FIRDatabaseQuery
     
     @IBOutlet weak var climbLogTableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        climbLogTableView.dataSource = self
+        climbLogTableView.dataSource = ClimbLogTableViewDataSource.init(query: query, tableView: climbLogTableView, populateCell: <#T##ClimbLogTableViewDataSource.PopulateCellBlock##ClimbLogTableViewDataSource.PopulateCellBlock##(UITableView, IndexPath, FIRDataSnapshot) -> UITableViewCell#>, commitEdit: <#T##ClimbLogTableViewDataSource.CommitEditBlock##ClimbLogTableViewDataSource.CommitEditBlock##(UITableView, UITableViewCellEditingStyle, IndexPath) -> Void#>)
         climbLogTableView.delegate = self
         // Do any additional setup after loading the view, typically from a nib.
         //configureDatabase()
@@ -52,7 +53,7 @@ class ClimbLogTableViewController: UIViewController {
             return cell
         }
 
-        self.climbLogTableView.dataSource = self.dataSource
+        self.climbLogTableView.dataSource = self.dataSource //as! ClimbLogTableViewDataSource
 
     }
     
