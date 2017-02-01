@@ -15,6 +15,7 @@ class AddClimbViewController: UIViewController {
     var firebaseRef: FIRDatabaseReference!
     let sportPickerData = ["5.4", "5.5", "5.6", "5.7", "5.8", "5.9", "5.10a", "5.10b", "5.10c", "5.10.d", "5.11a", "5.11b", "5.11c", "5.11d", "5.12a", "5.12b", "5.12c", "5.12d", "5.13", "5.14", "5.15"]
     let boulderPickerData = ["V0", "V1", "V2", "V3", "V4", "V5", "V6", "V7", "V8"]
+    var currentClimbList: [ClimbObject] = []
     
     @IBOutlet weak var todaysDatePicker: UIDatePicker!
     @IBOutlet weak var climbLocationTextField: UITextField!
@@ -27,8 +28,6 @@ class AddClimbViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        
-        
         climbLevelPickerView.delegate = self
         climbLevelPickerView.dataSource = self
         // Do any additional setup after loading the view.
@@ -60,15 +59,32 @@ class AddClimbViewController: UIViewController {
     
     @IBAction func addClimb(_ sender: Any) {
         let climbName = climbNameTextField.text
-        let climbLevel = climbLevelPickerView.description
+        let climbType = isSportClimb()
+        let climbLevel = climbLevelPickerView.selectedRow(inComponent: 0)
+        
+        let currentClimb = ClimbObject(climbName: climbName!, isSport: climbType, climbLevel: climbLevel)
+        
+        currentClimbList.append(currentClimb)
     }
     
     func addClimb(data: [String: String]) {
         firebaseRef.child("userID").childByAutoId().setValue(data)
     }
+    
+    // returns true if climb is sport/top rope and false if climb is bouldering
+    func isSportClimb() -> Bool {
+        if sportOrBoulderSegmentedControl.selectedSegmentIndex == 0 {
+            return true
+        }
+        
+        return false
+    }
 }
 
+// MARK: - UIPickerViewDelegate, UIPickerViewDataSource
+
 extension AddClimbViewController: UIPickerViewDelegate, UIPickerViewDataSource {
+    
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
