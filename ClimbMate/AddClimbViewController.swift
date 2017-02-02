@@ -12,11 +12,12 @@ import FirebaseDatabase
 
 class AddClimbViewController: UIViewController {
 
-    var firebaseRef: FIRDatabaseReference!
+    var firebaseRef: FIRDatabaseReference = FIRDatabase.database().reference()
     let sportPickerData = ["5.4", "5.5", "5.6", "5.7", "5.8", "5.9", "5.10a", "5.10b", "5.10c", "5.10.d", "5.11a", "5.11b", "5.11c", "5.11d", "5.12a", "5.12b", "5.12c", "5.12d", "5.13", "5.14", "5.15"]
     let boulderPickerData = ["V0", "V1", "V2", "V3", "V4", "V5", "V6", "V7", "V8"]
     var currentClimbList: [ClimbObject] = []
     
+    @IBOutlet weak var doneClimbingButton: UIButton!
     @IBOutlet weak var todaysDatePicker: UIDatePicker!
     @IBOutlet weak var climbLocationTextField: UITextField!
     @IBOutlet weak var climbListTableView: UITableView!
@@ -30,6 +31,8 @@ class AddClimbViewController: UIViewController {
 
         climbLevelPickerView.delegate = self
         climbLevelPickerView.dataSource = self
+        climbLocationTextField.delegate = self
+        climbNameTextField.delegate = self
         // Do any additional setup after loading the view.
     }
 
@@ -63,12 +66,32 @@ class AddClimbViewController: UIViewController {
         let climbLevel = climbLevelPickerView.selectedRow(inComponent: 0)
         
         let currentClimb = ClimbObject(climbName: climbName!, isSport: climbType, climbLevel: climbLevel)
-        
+        climbNameTextField.text = ""
         currentClimbList.append(currentClimb)
     }
     
-    func addClimb(data: [String: String]) {
-        firebaseRef.child("userID").childByAutoId().setValue(data)
+    @IBAction func doneClimbing(_ sender: Any) {
+        let climbDate = todaysDatePicker.date
+        let climbLocaiton = climbLocationTextField.text
+        
+        addClimb(climbDate: climbDate.description,data: currentClimbList)
+        
+    }
+    
+    func addClimb(climbDate: String, data: [ClimbObject]) {
+        for climb in data {
+            let thisClimb : [String:String] = [
+                Constants.climbName: climb.climbName,
+                Constants.climbValue:climb.climbLevel.description,
+                Constants.climbType: climb.isSport.description
+                ]
+            print(thisClimb[Constants.climbName])
+            print(thisClimb[Constants.climbValue])
+            print(thisClimb[Constants.climbType])
+            firebaseRef.child("userID").child(climbDate.description).childByAutoId().setValue(thisClimb)
+        }
+        
+        currentClimbList = []
     }
     
     // returns true if climb is sport/top rope and false if climb is bouldering
@@ -110,4 +133,8 @@ extension AddClimbViewController: UIPickerViewDelegate, UIPickerViewDataSource {
             return boulderPickerData[row]
         }
     }
+}
+
+extension AddClimbViewController: UITextFieldDelegate {
+
 }

@@ -15,4 +15,5 @@ class Constants {
     static let climbDate = "climb_date"
     static let climbName = "climb_name"
     static let climbLocation = "climb_location"
+    static let climbType = "climb_type"
 }
